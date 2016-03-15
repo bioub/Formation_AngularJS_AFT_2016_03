@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Helloworld</title>
+    <script src="node_modules/angular/angular.js"></script>
+</head>
+<body ng-app>
+    <div>
+        Prénom <input ng-model="user.prenom">
+    </div>
+    <div>
+        Nom <input ng-model="user.nom" ng-disabled="!user.prenom">
+    </div>
+    <p>Bonjour {{user.prenom}} {{user.nom}}</p>
+</body>
+</html>

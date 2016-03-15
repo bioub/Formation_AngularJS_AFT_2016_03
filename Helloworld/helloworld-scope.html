@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Helloworld</title>
+    <script src="node_modules/angular/angular.js"></script>
+</head>
+<body ng-app>
+    <div>
+        Prénoms (séparés par des virgules) <input ng-model="prenoms" ng-list>
+    </div>
+    <p>Liste des prénoms : </p>
+    <ul>
+        <li ng-repeat="prenom in prenoms">
+            {{prenom}}
+            <span ng-if="$first">- 1er</span>
+        </li>
+    </ul>
+</body>
+</html>

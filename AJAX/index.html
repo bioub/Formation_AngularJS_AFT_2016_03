@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Helloworld</title>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="js/controller.js"></script>
+</head>
+<body ng-controller="ContactController">
+<form ng-submit="ajouter()">
+    <label>
+        Prénom
+        <input ng-model="contact.prenom" required>
+    </label>
+    <label>
+        Nom
+        <input ng-model="contact.nom" required>
+    </label>
+    <button type="submit">Ajouter</button>
+</form>
+<p>Liste des contacts : </p>
+<ul>
+    <li ng-repeat="contact in contacts track by $index">
+        {{contact.prenom}} {{contact.nom}}
+        <span ng-if="$first">- 1er</span>
+        <button ng-click="supprimer($index)">Supprimer</button>
+    </li>
+</ul>
+</body>
+</html>
