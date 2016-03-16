@@ -1,5 +1,5 @@
 angular.module('app', [])
-.controller('PrenomController', function($scope) {
+.controller('PrenomController', ['$scope', function($scope) {
 
   $scope.prenoms = [];
 
@@ -11,4 +11,5 @@ angular.module('app', [])
     $scope.prenoms.splice(i, 1);
   };
 
-});
+}]);
+
