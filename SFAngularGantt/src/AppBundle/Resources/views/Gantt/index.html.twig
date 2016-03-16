@@ -1,0 +1,27 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Gantt:index{% endblock %}
+
+{% block body %}
+<h1>Diagramme de Gantt</h1>
+<div ng-app="app">
+    <div ng-controller="GanttController">
+        <div gantt data="dataFromServer" column-width="50">
+            <gantt-table></gantt-table>
+            <gantt-tooltips></gantt-tooltips>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block stylesheets %}
+{#
+    <link rel="stylesheet" href="{{ asset('node_modules/angular-gantt/assets/angular-gantt.css') }}">
+    <link rel="stylesheet" href="{{ asset('node_modules/angular-gantt/assets/angular-gantt-table-plugin.css') }}">
+    <link rel="stylesheet" href="{{ asset('node_modules/angular-gantt/assets/angular-gantt-tooltips-plugin.css') }}">
+#}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/gantt.min.js') }}"></script>
+{% endblock %}

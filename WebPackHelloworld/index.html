@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Helloworld</title>
+</head>
+<body ng-controller="PrenomController">
+<div>
+    First Name
+    <input ng-model="prenom">
+    <button ng-click="ajouter()">Ajouter</button>
+</div>
+<p>Liste des prénoms : </p>
+<ul>
+    <li ng-repeat="prenom in prenoms track by $index">
+        {{prenom}}
+        <span ng-if="$first">- 1er</span>
+        <button ng-click="supprimer($index)">Supprimer</button>
+    </li>
+</ul>
+</body>
+</html>
